@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MY PC\\source\\repos\\TestApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2CBBF36E-EAB1-4E62-8E3B-4CFF90F435D7}|TestApp\\TestApp.csproj|c:\\users\\my pc\\source\\repos\\testapp\\testapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBBF36E-EAB1-4E62-8E3B-4CFF90F435D7}|TestApp\\TestApp.csproj|solutionrelative:testapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\MY PC\\source\\repos\\TestApp\\TestApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TestApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\MY PC\\source\\repos\\TestApp\\TestApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TestApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-10T19:27:22.566Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

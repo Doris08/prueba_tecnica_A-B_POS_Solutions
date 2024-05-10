@@ -1,0 +1,52 @@
+﻿@model TestApp.Models.Item
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="card shadow-lg p-3 mb-3 bg-white rounded">
+    <div class="card-body">
+        <h1>Eliminar</h1>
+
+        <h3>Desea eliminar este Item?</h3>
+        <div>
+            <h4>Item</h4>
+            <hr />
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.CategoriaId)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.CategoriaId)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.NegocioId)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.NegocioId)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Eliminar" class="btn btn-danger" />
+
+                <div class="row py-2">
+                    <a asp-action="Index" class="text-decoration-none  mt-2 text-secondary">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

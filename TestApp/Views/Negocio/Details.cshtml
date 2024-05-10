@@ -1,0 +1,46 @@
+﻿@model TestApp.Models.Negocio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card shadow-lg p-3 mb-3 bg-white rounded">
+    <div class="card-body">
+
+        <h1>Detalles</h1>
+
+        <div>
+            <h4>Negocio</h4>
+            <hr />
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.FechaCreacion)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.FechaCreacion)
+                </dd>
+            </dl>
+        </div>
+        <div class="form-group py-4">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-info">Editar</a>
+
+        </div>
+
+        <div class="row">
+            <a asp-action="Index" class="text-decoration-none  mt-2 text-secondary">Regresar</a>
+        </div>
+
+    </div>
+</div>

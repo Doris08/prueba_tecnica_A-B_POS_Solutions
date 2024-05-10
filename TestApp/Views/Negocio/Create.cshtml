@@ -1,0 +1,49 @@
+﻿@model TestApp.Models.Negocio
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card shadow-lg p-3 mb-3 bg-white rounded">
+    <div class="card-body">
+        <h1>Crear</h1>
+
+        <h4>Negocio</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Descripcion" class="control-label">Descripción</label>
+                        <textarea asp-for="Descripcion" class="form-control" /></textarea>
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FechaCreacion" class="control-label">Fecha de creación</label>
+                        <input asp-for="FechaCreacion" class="form-control" />
+                        <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group py-4">
+                        <input type="submit" value="Crear" class="btn btn-dark" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <a asp-action="Index" class="text-decoration-none  mt-2 text-secondary">Regresar</a>
+        </div>
+        
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

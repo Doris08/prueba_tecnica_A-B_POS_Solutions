@@ -1,0 +1,84 @@
+﻿@using TestApp.Models
+@model IEnumerable<TestApp.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    var categorias = new List<CategoriaItem>();
+    categorias = ViewBag.Categorias;
+
+    var negocios = new List<Negocio>();
+    negocios = ViewBag.Negocios;
+}
+
+<div class="card shadow-lg p-3 mb-3 bg-white rounded">
+    <div class="card-body">
+
+        <h1>Items</h1>
+
+        <p>
+            <a asp-action="Create" class="btn btn-success">
+                Agregar
+            </a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                       Categoría
+                    </th>
+                    <th>
+                        Negocio
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Precio)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                            @foreach (var categoria in categorias)
+                        {
+                            if (item.CategoriaId== categoria.Id)
+                            {
+                                <td>
+                                    @categoria.Nombre
+                                </td>
+                            }
+                          
+                        }
+
+                        @foreach (var negocio in negocios)
+                        {
+                            if (item.NegocioId == negocio.Id)
+                            {
+                                <td>
+                                    @negocio.Nombre
+                                </td>
+                            }
+
+                }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-info"> Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary"> Mostrar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"> Eliminar</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+</div>

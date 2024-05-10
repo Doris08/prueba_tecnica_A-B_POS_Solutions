@@ -1,0 +1,82 @@
+﻿@using TestApp.Models
+@model TestApp.Models.Item
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    var categorias = new List<CategoriaItem>();
+    categorias = ViewBag.Categorias;
+
+    var negocios = new List<Negocio>();
+    negocios = ViewBag.Negocios;
+}
+
+<div class="card shadow-lg p-3 mb-3 bg-white rounded">
+    <div class="card-body">
+        <h1>Crear</h1>
+
+        <h4>Item</h4>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+
+                        <label asp-for="CategoriaId" class="control-label">Seleccione una categoría </label> <br />
+                        <select name="CategoriaId" asp-for="CategoriaId" class="form-select" aria-label="Default select example">
+                            @foreach (var c in categorias)
+                            {
+                                <option value=@c.Id class="form-control">@c.Nombre</option>
+                            }
+                            
+                        </select>
+                        <span asp-validation-for="CategoriaId" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label asp-for="NegocioId" class="control-label">Seleccione un negocio </label> <br />
+                        <select name="NegocioId" asp-for="NegocioId" class="form-select" aria-label="Default select example">
+                            @foreach (var n in negocios)
+                            {
+                                <option value=@n.Id class="form-control">@n.Nombre</option>
+                            }
+
+                        </select>
+                        <span asp-validation-for="NegocioId" class="text-danger"></span>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Precio" class="control-label">Precio ($)</label>
+                        <input asp-for="Precio" class="form-control" type="number" step="any" />
+                        <span asp-validation-for="Precio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group py-4">
+                        <input type="submit" value="Crear" class="btn btn-dark" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <a asp-action="Index" class="text-decoration-none  mt-2 text-secondary">Regresar</a>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
